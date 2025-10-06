@@ -9,9 +9,9 @@
 -[x] Base de datos json-server
 
 ## Parte 2: Script CRUD con funciones JavaScript
--[] Archivo src/crud-curl.js
--[] Funciones CRUD requeridas
--[] Ejecución del script
+-[x] Archivo src/crud-curl.js
+-[x] Funciones CRUD requeridas
+-[x] Ejecución del script
 
 ## Parte 3: Documentación CRUD con CURL
 -[] README.md - Sección CRUD
