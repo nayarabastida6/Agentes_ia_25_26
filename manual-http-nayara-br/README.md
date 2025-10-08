@@ -374,3 +374,161 @@ No se necesitan headers para esta petición.
 - **Response Headers**
 Headers recibidos en la respuesta.
 ![Response headers](images/thunder-delete-student-headers.png)
+
+
+
+---
+
+
+
+# REST API con REST Client ⚡
+Este apartado describe las peticiones realizadas con **REST Client** para interactuar con la API de estudiantes, utilizando las operaciones CRUD implementadas.
+
+
+
+## Índice de peticiones
+1. CREATE - Crear estudiante
+2. READ - Leer todos los estudiantes
+3. READ - Leer estudiante por ID
+4. READ - Filtrar estudiantes activos
+5. READ - Filtrar por nivel
+6. UPDATE - Actualizar estudiante completo
+7. PATCH - Actualizar campo específico
+8. DELETE - Eliminar estudiante
+
+
+
+## 1. CREATE - Crear estudiante
+Crea un nuevo estudiante en la base de datos.
+
+### Comando REST Client
+```bash
+POST {{apiUrl}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id": 15,
+    "name": "Adrián Trujillo",
+    "email": "adrian@gmail.com",
+    "enrollmentDate": "2023-08-01",
+    "active": true,
+    "level": "beginner"
+}
+```
+
+### Resultado
+![Respuesta - CREATE](images/rest-create-student.png)
+
+
+
+## 2. READ ALL - Leer todos los estudiantes
+Obtiene todos los estudiantes registrados en la base de datos.
+
+### Comando REST Client
+```bash
+GET {{apiUrl}}
+Accept: application/json
+```
+
+### Resultado
+![Respuesta - READ ALL](images/rest-read-all-students.png)
+
+
+
+## 3. READ BY ID - Leer estudiante por ID
+Obtiene los datos de un estudiante específico mediante su ID.
+
+### Comando REST Client
+```bash
+GET {{apiUrl}}/15
+Accept: application/json
+```
+
+### Resultado
+![Respuesta - READ BY ID](images/rest-read-by-id.png)
+
+
+
+## 4. READ Active - Filtrar estudiantes activos
+Obtiene los estudiantes cuyo estado active sea true.
+
+### Comando REST Client
+```bash
+GET {{apiUrl}}?active=true
+Accept: application/json
+```
+
+### Resultado
+![Respuesta - READ ACTIVE](images/rest-filter-active-students.png)
+
+
+
+## 5. READ Level - Filtrar por nivel
+Obtiene los estudiantes cuyo nivel es el que especifíque la consulta.
+
+### Comando REST Client
+```bash
+GET {{apiUrl}}?level=intermediate
+Accept: application/json
+```
+
+### Resultado
+![Respuesta - READ LEVEL](images/rest-filter-by-level.png)
+
+
+
+## 6. UPDATE - Actualizar estudiante completo
+Actualiza todos los datos de un estudiantes existente, se reemplazan los actuales por los nuevos datos proporcionados.
+
+### Comando REST Client
+```bash
+PUT {{apiUrl}}/15
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id": 15,
+    "name": "Adrián Trujillo",
+    "email": "adrian_cambio@gmail.com",
+    "enrollmentDate": "2023-08-01",
+    "active": true,
+    "level": "intermediate"
+}
+```
+
+### Resultado
+![Respuesta - UPDATE](images/rest-update-student.png)
+
+
+
+## 7. PATCH - Actualizar campo específico
+Actualiza un campo específico de un estudiante, sin cambiar los otros datos.
+
+### Comando REST Client
+```bash
+PATCH {{apiUrl}}/15
+Content-Type: application/json
+Accept: application/json
+
+{
+    "active": false
+}
+```
+
+### Resultado
+![Respuesta - PATCH](images/rest-patch-student.png)
+
+
+
+## 8. DELETE - Eliminar estudiante
+Elimina a un estudiante mediante su ID
+
+### Comando REST Client
+```bash
+DELETE {{apiUrl}}/15
+Accept: application/json
+```
+
+### Resultado
+![Respuesta - DELETE](images/rest-delete-student.png)
