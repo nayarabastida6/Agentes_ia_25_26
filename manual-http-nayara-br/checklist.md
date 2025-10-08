@@ -60,21 +60,19 @@
     - [x] Documentar respuestas en el README
 
 ## Parte 4: Thunder Client
-- [] Configuración
-    - [] Crear una colección llamada `CRUD Student API`
-    - [] Crear entorno de variables (`baseUrl`, `port`, `fullUrl`)
-- [] Peticiones
-    - [] CREATE Student (POST)
-    - [] GET All Students (GET)
-    - [] GET Student by ID (GET)
-    - [] UPDATE Student (PUT)
-    - [] PATCH Student (PATCH)
-    - [] DELETE Student (DELETE)
-- [] Capturas de pantalla de cada petición
-    - [] `Request completo` (método, URL, headers, body si aplica)
-    - [] `Response completo` (status, headers, body)
-- [] Documentación
-    - [] Explicar como usar `Thunder Client` en el README
+- [x] Configuración
+- [x] Peticiones
+    - [x] CREATE Student (POST)
+    - [x] GET All Students (GET)
+    - [x] GET Student by ID (GET)
+    - [x] UPDATE Student (PUT)
+    - [x] PATCH Student (PATCH)
+    - [x] DELETE Student (DELETE)
+- [x] Capturas de pantalla de cada petición
+    - [x] `Request completo` (método, URL, headers, body si aplica)
+    - [x] `Response completo` (status, headers, body)
+- [x] Documentación
+    - [x] Explicar como usar `Thunder Client` en el README
 
 ## Parte 5: REST Client
 - [] Archivo peticiones-crud.http

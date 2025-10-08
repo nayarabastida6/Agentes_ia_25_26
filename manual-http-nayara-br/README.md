@@ -203,3 +203,174 @@ La siguiente imagen muestra la respuesta completa tras ejecutar el comando. Se o
 
 ### Explicación del código de estado HTTP recibido
 `HTTP/1.1 200 OK` → Indica que todo fue bien y se mostró la información del estudiante eliminado.
+
+
+
+---
+
+
+
+# Thunder Client – Pruebas CRUD con la API de Estudiantes ⚡
+Este apartado describe cómo probar las operaciones CRUD sobre la API de estudiantes usando Thunder Client. 
+
+## ¿Qué es Thunder Client?
+Es una extensión para VS Code que permite realizar solicitudes HTTP sin salir del editor. Es muy útil cuando queremos probar endpoints de una API de manera visual y sencilla.
+
+### 1. Instalar Thunder Client
+1. Abre VS Code.
+2. Ve a la pestaña **Extensiones** (Icono de cuadrados).
+3. Busca **"Thunder Client"** e instálalo.
+
+### 2. Abrir Thunder Client
+1. Haz clic en el ícono de Thunder Client (Tiene forma de rayo) que aparece en la barra lateral.
+2. Presiona **"New Request"** para crear una nueva solicitud HTTP.
+
+### 3. Realizar una petición
+Completa los siguientes campos:
+
+- **Método**: Selecciona `GET`, `POST`, `PUT`, `PATCH` o `DELETE`.
+- **URL**: Escribe el endpoint completo. Por ejemplo → `http://localhost:4000/students`.
+- **Headers**:
+    - Haz clic en la pestaña **"Headers"**.
+    - Agrega el header `Content-Type: application/json` (Solo si vas a enviar datos en el body).
+- **Body** (Solo para  `POST`, `PUT` o `PATCH`):
+    - Ve a la pestaña **"Body"**, selecciona formato `JSON`.
+    - Escribe el contenido que quieras enviar. Por ejemplo → Los datos de un estudiante.
+
+### 4. Ver la respuesta
+Haz clic en el botón **"Send"**. Verás:
+
+- El **status** de la respuesta (200 OK, 201 Created, 404 Not Found, etc).
+- El **body** de la respuesta en formato JSON.
+- Los **headers** de la respuesta.
+
+Si ejecutas tu API con JSON Server, recuerda iniciar el servidor primero:
+
+```bash
+json-server --watch db.json --port 4000
+```
+
+
+## Configuración previa
+Para trabajar con nuestra API local, se ha utilizado la siguiente configuración:
+
+- **Base URL**: `http://localhost`
+- **Puerto**: `4000`
+- **Endpoint principal**: `/students`
+- **Otros recursos disponibles**: `/courses`, `/enrollments`
+
+Ejemplo de endpoint completo:
+```bash
+http://localhost:4000/students
+```
+
+> **Nota**⚠️: La versión gratuita de Thunder Client no soporta colecciones o entornos de variables, por lo que cada solicitud se ha realizado de manera manual, insertando la URL y el body correspondiente
+
+
+
+## Índice de peticiones
+1. CREATE (Crear estudiante)
+2. READ ALL (Leer todos los estudiantes)
+3. READ BY ID (Leer estudiante por ID)
+4. UPDATE (Actualizar estudiante)
+5. PATCH (Actualizar estudiante parcialmente)
+6. DELETE (Eliminar estudiante)
+
+
+
+## 1. CREATE (Crear estudiante)
+- **Request**
+En esta captura se muestra la petición `POST` para crear un nuevo estudiante. Incluyendo la `URL` del endpoint `(http://localhost:4000/students)`, el `método` seleccionado y el `body` en formato `JSON` con los datos del estudiante que queremos crear.
+![Request](images/thunder-create-student-request.png)
+
+- **Request Headers**
+En esta captura se muestra la pestaña `Headers` donde se define el valor `Content-Type: application/json`, que informa al servidor del formato de la solicitud.
+![Request headers](images/thunder-create-student-request-header.png)
+
+- **Response**
+Esta captura muestra la respuesta del servidor tras crear al estudiante. Podemos ver el status `201 Created` junto con el `body` devuelto que son los datos del nuevo estudiante como confirmación.
+![Response](images/thunder-create-student-response.png)
+
+- **Response Headers**
+Esta captura muestra la pestaña `Headers` de la respuesta. Podemos observar los encabezados enviados por el servidor, incluyendo `Content-Type: application/json` y otros headers como la fecha, longitud del contenido, etc.
+![Response headers](images/thunder-create-student-response-headers.png)
+
+
+
+## 2. READ ALL (Leer todos los estudiantes)
+- **Request & Response**
+En esta captura se muestra la petición `GET` para obtener la lista completa de estudiantes. Se incluye la `URL` del endpoint `(http://localhost:4000/students)` y el `método` seleccionado. También se muestra la respuesta del servidor, donde se observa el status `200 OK` y el `body` con el listado de todos los estudiantes en formato JSON.
+![Request & Response](images/thunder-read-all-students.png)
+
+- **Request Headers**
+Como es una petición `GET`, no se agregan headers adicionales.
+
+- **Response Headers**
+Aquí se visualizan los encabezados devueltos por el servidor.
+![Response headers](images/thunder-read-all-students-headers.png)
+
+
+
+## 3. READ BY ID (Leer estudiante mediante ID)
+- **Request & Response**
+Petición `GET` para obtener un estudiante específico. Usando la `URL` del endpoint con el ID `(http://localhost:4000/students/10)` y el `método` seleccionado. También vemos la respuesta del servidor con status `200 OK` y `body` con el estudiante solicitado.
+![Request & Response](images/thunder-read-student-by-id.png)
+
+- **Request Headers**
+No se incluyen headers ya que no es necesario.
+
+- **Response Headers**
+Encabezados recibidos en la respuesta.
+![Response headers](images/thunder-read-student-by-id-headers.png)
+
+
+
+## 4. UPDATE (Actualizar estudiante completo)
+- **Request**
+Petición `PUT` para actualizar completamente los datos del estudiante con ID 10. Se muestra la `URL`, el `método` y el `body` que contiene todos los campos obligatorios del estudiante, aunque no vayan a cambiar.
+![Request](images/thunder-update-student-request.png)
+
+- **Request Headers**
+Pestaña `Headers` donde se muestra `Content-Type: application/json` para indicar el formato del body enviado.
+![Request headers](images/thunder-update-student-request-headers.png)
+
+- **Response**
+Respuesta con status `200 OK` y `body` devuelto con el estudiante actualizado.
+![Response](images/thunder-update-student-response.png)
+
+- **Response Headers**
+Encabezados recibidos en la respuesta.
+![Response headers](images/thunder-update-student-response-headers.png)
+
+
+
+## 5. PATCH (Actualizar estudiante parcialmente)
+- **Request**
+Petición `PATCH` para modificar parcialmente el estudiante con ID 10. En este caso solo vamos a actualizar el campo `active`. Se muestra la `URL`, el `método` y el `body`
+![Request](images/thunder-patch-student-request.png)
+
+- **Request Headers**
+Se muestra el header `Content-Type: application/json` para el body JSON enviado.
+![Request headers](images/thunder-patch-student-request-headers.png)
+
+- **Response**
+Status `200 OK` y `body` con los datos del estudiante con el campo modificado.
+![Response](images/thunder-patch-student-response.png)
+
+- **Response Headers**
+Headers recibidos en la respuesta.
+![Response headers](images/thunder-patch-student-response-headers.png)
+
+
+
+## 6. DELETE (Eliminar estudiante)
+- **Request & Response**
+Petición `DELETE` para eliminar al estudiante con ID 10, mostrando la `URL` y el `método` usado. También podemos ver la respuesta del servidor con status `200 OK` y `body` con el estudiante eliminado devuelto como confirmación.
+![Request & Response](images/thunder-delete-student.png)
+
+- **Request Headers**
+No se necesitan headers para esta petición.
+
+- **Response Headers**
+Headers recibidos en la respuesta.
+![Response headers](images/thunder-delete-student-headers.png)
