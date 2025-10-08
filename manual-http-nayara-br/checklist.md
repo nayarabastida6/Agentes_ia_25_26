@@ -114,27 +114,27 @@
 
 ## Parte 8: Git y GitHub
 - [x] Crear repositorio `manual-http-[tu-nombre]`
-- [] Añadir al profesor como colaborador
+- [x] Añadir al profesor como colaborador
 - [x] Configuración local
     - [x] Inicializar git
     - [x] Conectar con el repositorio remoto
     - [x] Crear rama principal `main` y subir código inicial
 - [x] Rama de desarrollo
     - [x] Crear rama `m1/http-request-response` y cambiar a esa rama para trabajar
-- [] Commits
-    - [] Incrementales por cada fase del checklist
-    - [] Mensajes descriptivos
-    - [] Usar convención (`feat:`, `docs:`, `fix:`, etc)
-- [] Pull Request
-    - [] Subir rama al repositorio remoto
-    - [] Crear Pull Request desde `m1/http-request-response` hacia `main`
-    - [] Título del PR: `Entrega M1/http-request-response`
-    - [] Descripción detallada del PR
-        - [] Resumen de lo implementado
-        - [] Dificultades encontradas y soluciones
-        - [] Características completadas
-    - [] Asignar al profesor como reviewer
-    - [] Enviar el PR
+- [x] Commits
+    - [x] Incrementales por cada fase del checklist
+    - [x] Mensajes descriptivos
+    - [x] Usar convención (`feat:`, `docs:`, `fix:`, etc)
+- [x] Pull Request
+    - [x] Subir rama al repositorio remoto
+    - [x] Crear Pull Request desde `m1/http-request-response` hacia `main`
+    - [x] Título del PR: `Entrega M1/http-request-response`
+    - [x] Descripción detallada del PR
+        - [x] Resumen de lo implementado
+        - [x] Dificultades encontradas y soluciones
+        - [x] Características completadas
+    - [x] Asignar al profesor como reviewer
+    - [x] Enviar el PR
 - [] Después de la aprobación
     - [] Actualizar rama main local
     - [] Crear tag `M1/http-request-response` y subirlo al repositorio remoto
