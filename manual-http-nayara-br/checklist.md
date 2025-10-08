@@ -91,23 +91,23 @@
 - [x] Probrar cada petición desde VS Code y verificar que funcionan correctamente
 
 ## Parte 6: Script de validación
-- [] Archivo scripts/validate.sh que valide
-    - [] `package.json` 
-    - [] `src/db/db.json` 
-    - [] `.gitignore` 
-    - [] `.env.example` 
-    - [] `README.md` 
-    - [] `checklist.md` 
-    - [] `peticiones-crud.http` 
-    - [] Carpetas `src/`, `scripts/`, `images/` 
-    - [] Archivo `src/crud-curl.js` 
-    - [] Configuración de `package.json`:
-        - [] `"type": "module"` 
-        - [] Dependencias `dotenv` y `json-server`
-        - [] Scripts `server:up` y `crud:curl`
-    - [] Al menos 6 capturas en `images/` 
-    - [] Mostrar mensaje de validación completa 
-- [] Dar permisos de ejecución y probar en terminal
+- [x] Archivo scripts/validate.sh que valide
+    - [x] `package.json` 
+    - [x] `src/db/db.json` 
+    - [x] `.gitignore` 
+    - [x] `.env.example` 
+    - [x] `README.md` 
+    - [x] `checklist.md` 
+    - [x] `peticiones-crud.http` 
+    - [x] Carpetas `src/`, `scripts/`, `images/` 
+    - [x] Archivo `src/crud-curl.js` 
+    - [x] Configuración de `package.json`:
+        - [x] `"type": "module"` 
+        - [x] Dependencias `dotenv` y `json-server`
+        - [x] Scripts `server:up` y `crud:curl`
+    - [x] Al menos 6 capturas de Thunder en `images/` 
+    - [x] Mostrar mensaje de validación completa 
+- [x] Dar permisos de ejecución y probar en terminal
 
 ## Parte 7: Checklist de progreso
 - [x] Archivo checklist.md
