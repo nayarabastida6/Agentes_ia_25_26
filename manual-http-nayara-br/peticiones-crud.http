@@ -1,0 +1,116 @@
+@baseUrl = http://localhost
+@port = 4000
+@apiUrl = {{baseUrl}}:{{port}}/students
+
+
+
+# ============================
+# 1. CREATE Student - Crear estudiante
+# ============================
+### Crear estudiante (CREATE)
+POST {{apiUrl}}
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id": 15,
+    "name": "Adrián Trujillo",
+    "email": "adrian@gmail.com",
+    "enrollmentDate": "2023-08-01",
+    "active": true,
+    "level": "beginner"
+}
+
+# Crea el nuevo estudiante con los datos indicados
+
+
+
+# ============================
+# 2. READ ALL Students - Leer todos los estudiantes
+# ============================
+### Leer todos los estudiantes (READ ALL)
+GET {{apiUrl}}
+Accept: application/json
+
+# Imprime todos los estudiantes
+
+
+
+# ============================
+# 3. READ Student BY ID - Leer estudiante por ID
+# ============================
+### Leer estudiante por ID (READ BY ID)
+GET {{apiUrl}}/15
+Accept: application/json
+
+# Imprime el estudiante especificado mediante ID
+
+
+
+# ============================
+# 4. READ Active Student - Filtrar estudiantes activos
+# ============================
+### Filtrar estudiantes activos (READ - Activos)
+GET {{apiUrl}}?active=true
+Accept: application/json
+
+# Obtiene todos los estudiantes cuyo campo "active" es verdadero
+
+
+
+# ============================
+# 5. READ Filter by Level - Filtrar estudiantes por nivel
+# ============================
+### Filtrar por nivel (READ - Por nivel(intermediate))
+GET {{apiUrl}}?level=intermediate
+Accept: application/json
+
+# Filtra los estudiantes por el nivel especificado (En este caso, intermediate)
+
+
+
+# ============================
+# 6. UPDATE Student - Actualizar estudiante completo
+# ============================
+### Actualizar estudiante completo (UPDATE - PUT)
+PUT {{apiUrl}}/15
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id": 15,
+    "name": "Adrián Trujillo",
+    "email": "adrian_cambio@gmail.com",
+    "enrollmentDate": "2023-08-01",
+    "active": true,
+    "level": "intermediate"
+}
+
+# Reemplaza todos los datos del estudiante con ID 15
+
+
+
+# ============================
+# 7. PATCH Student - Actualizar campo específico
+# ============================
+### Actualizar campo específico (PATCH)
+PATCH {{apiUrl}}/15
+Content-Type: application/json
+Accept: application/json
+
+{
+    "active": false
+}
+
+# Solo actualiza el campo "active" del estudiante con ID 15
+
+
+
+# ============================
+# 8. DELETE Student - Eliminar estudiante
+# ============================
+### Eliminar estudiante (DELETE)
+DELETE {{apiUrl}}/15
+Accept: application/json
+
+# Elimina al estudiante con ID 15

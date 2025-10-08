@@ -75,20 +75,20 @@
     - [x] Explicar como usar `Thunder Client` en el README
 
 ## Parte 5: REST Client
-- [] Archivo peticiones-crud.http
-    - [] Crear archivo en la raíz del proyecto
-    - [] Definir variables al inicio (@baseUrl, @port, @apiUrl)
-    - [] Implemetar operaciones CRUD usando sintaxis de REST Client
-- [] Peticiones requeridas
-    - [] CREATE - Crear estudiante
-    - [] READ - Todos los estudiantes
-    - [] READ - Estudiante por ID
-    - [] READ - Filtrar estudiantes activos
-    - [] READ - Filtrar por nivel
-    - [] UPDATE - Actualizar estudiante completo (PUT)
-    - [] PATCH - Actualizar campo específico
-    - [] DELETE - Eliminar estudiante
-- [] Probrar cada petición desde VS Code y verificar que funcionan correctamente
+- [x] Archivo peticiones-crud.http
+    - [x] Crear archivo en la raíz del proyecto
+    - [x] Definir variables al inicio (@baseUrl, @port, @apiUrl)
+    - [x] Implemetar operaciones CRUD usando sintaxis de REST Client
+- [x] Peticiones requeridas
+    - [x] CREATE - Crear estudiante
+    - [x] READ - Todos los estudiantes
+    - [x] READ - Estudiante por ID
+    - [x] READ - Filtrar estudiantes activos
+    - [x] READ - Filtrar por nivel
+    - [x] UPDATE - Actualizar estudiante completo (PUT)
+    - [x] PATCH - Actualizar campo específico
+    - [x] DELETE - Eliminar estudiante
+- [x] Probrar cada petición desde VS Code y verificar que funcionan correctamente
 
 ## Parte 6: Script de validación
 - [] Archivo scripts/validate.sh que valide
