@@ -1,0 +1,16 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Archivos de logs
+*.log
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Carpetas de editores
+.vscode/
+thunder-tests/
